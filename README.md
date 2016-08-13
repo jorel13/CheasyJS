@@ -1,0 +1,2 @@
+# ElementalJS
+Simple JS library
