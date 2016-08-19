@@ -1,4 +1,4 @@
-var Elemental = (function(){
+
     
 	//Base for building Elemental object
 	var Elemental = function() {};
@@ -72,7 +72,7 @@ var Elemental = (function(){
 	  }
 	};
 	
-})();
+
 
 
 
