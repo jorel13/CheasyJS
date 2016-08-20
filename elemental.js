@@ -36,6 +36,17 @@
 		this.htmlElement.style.cssText = styleProperties;
 	  }
 	};
+	
+	//Prototype method for toggling classes that are applied to the Elemental
+	Elemental.prototype.toggleClass = function(class) {
+		if(class){
+			if(this.htmlElement.classList.contains(class)){
+				this.htmlElement.classList.remove(class);
+			}else{
+				this.htmlElement.classList.add(class);
+			}
+		}
+	};
 
 	//Prototype method to loop through each elemental in the collection
 	ElementalCollection.prototype.each = function(process){
