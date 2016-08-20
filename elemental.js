@@ -82,23 +82,3 @@
 		return elementalsCollection;
 	  }
 	};
-	
-
-
-
-
-/*
-//Examples
-var testElemental = summon(".zz");
-testElemental.addListener("click", function () {
-    alert("you clicked me!");
-});
-testElemental.setStyle('color: blue;');
-
-
-var testElementalCollection = summonAll("input");
-testElementalCollection.each(function(item){item.setStyle('background: red;');});
-
-summon("button").addListener("click", function () {
-   testElemental.toggle(); 
-});*/
