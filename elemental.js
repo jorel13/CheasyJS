@@ -38,12 +38,12 @@
 	};
 	
 	//Prototype method for toggling classes that are applied to the Elemental
-	Elemental.prototype.toggleClass = function(class) {
-		if(class){
-			if(this.htmlElement.classList.contains(class)){
-				this.htmlElement.classList.remove(class);
+	Elemental.prototype.toggleClass = function(className) {
+		if(className){
+			if(this.htmlElement.classList.contains(className)){
+				this.htmlElement.classList.remove(className);
 			}else{
-				this.htmlElement.classList.add(class);
+				this.htmlElement.classList.add(className);
 			}
 		}
 	};
