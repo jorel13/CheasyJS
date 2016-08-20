@@ -51,7 +51,7 @@
 	//Prototype method for getting the attribute of an Elemental
 	Elemental.prototype.get = function(attribute) {
 		if(attribute){
-			this.htmlElement.getAttribute(attribute);
+			return this.htmlElement.getAttribute(attribute);
 		}
 	};
 
