@@ -47,6 +47,13 @@
 			}
 		}
 	};
+	
+	//Prototype method for getting the attribute of an Elemental
+	Elemental.prototype.get = function(attribute) {
+		if(attribute){
+			this.htmlElement.getAttribute(attribute);
+		}
+	};
 
 	//Prototype method to loop through each elemental in the collection
 	ElementalCollection.prototype.each = function(process){
