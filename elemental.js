@@ -3,6 +3,8 @@
 	//Base for building Elemental object
 	var Elemental = function() {};
 	var ElementalCollection = function() {};
+	var REMOVE_ONLY = "remove";
+	var ADD_ONLY = "add";
 
 	//Prototype method for adding event listeners to Elemental
 	Elemental.prototype.addListener = function (event, handler) {
@@ -38,12 +40,20 @@
 	};
 	
 	//Prototype method for toggling classes that are applied to the Elemental
-	Elemental.prototype.toggleClass = function(className) {
+	Elemental.prototype.toggleClass = function(className, removeOrAddOnly) {
 		if(className){
-			if(this.htmlElement.classList.contains(className)){
-				this.htmlElement.classList.remove(className);
-			}else{
-				this.htmlElement.classList.add(className);
+			if(removeOrAddOnly){
+				if(removeOrAddOnly == REMOVE_ONLY){
+					this.htmlElement.classList.remove(className);
+				} else if(removeOrAddOnly == ADD_ONLY && !this.htmlElement.classList.contains(className)){
+					this.htmlElement.classList.add(className);
+				}
+			} else {
+				if(this.htmlElement.classList.contains(className)){
+					this.htmlElement.classList.remove(className);
+				}else{
+					this.htmlElement.classList.add(className);
+				}
 			}
 		}
 	};
@@ -65,9 +75,9 @@
 	};
 	
 	//Prototype method to change the toggle the class of each elemental in the collection
-	ElementalCollection.prototype.toggleClass = function(className){
+	ElementalCollection.prototype.toggleClass = function(className, removeOrAddOnly){
 		this.each(function(elemental) {
-			elemental.toggleClass(className);
+			elemental.toggleClass(className, removeOrAddOnly);
 		});
 	};
 
