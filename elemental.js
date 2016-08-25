@@ -63,6 +63,13 @@
 		}
 	  }
 	};
+	
+	//Prototype method to change the toggle the class of each elemental in the collection
+	ElementalCollection.prototype.toggleClass = function(className){
+		this.each(function(elemental) {
+			elemental.toggleClass(className);
+		});
+	};
 
 	//This creates an Elemental with the HTML element built inside of it
 	var summon =  function(selector){
